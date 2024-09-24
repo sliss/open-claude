@@ -68,13 +68,13 @@ export async function POST(req: NextRequest) {
   try {
     const { messages } = await req.json();
 
-    const response = await getAnthropicCompletion(messages, {
+    const responseText = await getAnthropicCompletion(messages, {
       maxTokens: 1000,
       temperature: 0.7,
       topP: 0.999,
     });
 
-    return NextResponse.json({ response });
+    return NextResponse.json({ message: responseText });
   } catch (error) {
     console.error('Error:', error);
     return NextResponse.json({ error: 'An error occurred while processing your request.' }, { status: 500 });

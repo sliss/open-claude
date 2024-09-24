@@ -6,12 +6,12 @@ Men will do anything but pay for monthly SaaS
 
 # Description
 
-This is a simple clone of chatbots like Claude or chatGPT. It allows users to ask questions and receive answers from a chatbot.
+This is a simple clone of chatbots like Claude or chatGPT. It allows users to ask questions and receive answers from a chatbot powered by Claude 3.5 Sonnet via AWS Bedrock.
 
 Features:
 
 - Ask questions
-- Receive answers
+- Receive answers from Claude 3.5 Sonnet
 - Multi-turn conversations that allow users to ask follow-up questions
 - Markdown support for answers
 
@@ -20,6 +20,7 @@ Features:
 - Next.js
 - TailwindCSS
 - Vercel
+- AWS Bedrock (Claude 3.5 Sonnet)
 
 # Setup and Running the Project
 
@@ -42,7 +43,7 @@ Features:
      ```
      cp .env.example .env
      ```
-   - Open the `.env` file and replace `your_openai_api_key_here` with your actual OpenAI API key.
+   - Open the `.env` file and replace the placeholder values with your actual AWS credentials and region.
 
 4. Run the development server:
 

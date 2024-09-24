@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-sdk/client-bedrock-runtime": "^3.658.0",
     "@vercel/analytics": "^1.3.1",
     "next": "14.2.13",
     "openai": "^4.63.0",

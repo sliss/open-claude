@@ -10,7 +10,7 @@ const bedrockClient = new BedrockRuntimeClient({
 });
 
 async function getAnthropicCompletion(messages: any[], options: any = {}) {
-  const model = "anthropic.claude-3-sonnet-20240229-v1:0";
+  const model = "anthropic.claude-3-5-sonnet-20240620-v1:0";
   const {
     maxTokens = 1000,
     temperature = 1.0,
@@ -30,6 +30,7 @@ async function getAnthropicCompletion(messages: any[], options: any = {}) {
   }
 
   const payload = {
+    // system: 'You are a digital advertising expert skilled in using contextual data to optimize ad targeting and performance without relying on individualuser data.',
     anthropic_version: 'bedrock-2023-05-31',
     messages,
     max_tokens: maxTokens,
@@ -52,9 +53,9 @@ async function getAnthropicCompletion(messages: any[], options: any = {}) {
   console.log('Bedrock command prepared, sending request...');
   try {
     const apiResponse = await bedrockClient.send(command);
-    console.log('Bedrock API response received', apiResponse);
+    // console.log('Bedrock API response received', apiResponse);
     const decodedResponseBody = new TextDecoder().decode(apiResponse.body);
-    console.log('Decoded response body:', decodedResponseBody);
+    // console.log('Decoded response body:', decodedResponseBody);
     const responseBody = JSON.parse(decodedResponseBody);
     console.log('Response body:', responseBody);
     return responseBody.content[0].text;
